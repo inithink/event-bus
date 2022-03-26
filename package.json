@@ -1,0 +1,26 @@
+{
+  "name": "@inithink/event-bus",
+  "version": "1.0.2",
+  "description": "",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "jest  --testPathPattern=\\.test\\.tsx?",
+    "dev": "npm run build&& concurrently \"tsc --watch -p .\"  \"nodemon -q --delay 0.3 --watch build build/index.js\"",
+    "build": "tsc  -p .",
+    "start": "npm run build && node build/index.js",
+    "update-dependencies": "npx npm-check-updates -u && npm i",
+    "preupload": "npm run build",
+    "upload": "npm publish --access public"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "concurrently": "^7.0.0",
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15",
+    "ts-jest": "^27.1.4",
+    "typescript": "^4.6.3"
+  }
+}
